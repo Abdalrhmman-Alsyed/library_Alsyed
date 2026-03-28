@@ -8,14 +8,12 @@ import { FeedbackService } from './feedback/feedback.service';
   imports: [
 TypeOrmModule.forRoot({
   type: 'postgres',
- 
-  url: "postgresql://postgres:stJQYlZjqyXfTcEIGBRHmvEuVTkPpuKR@postgres.railway.internal:5432/railway",
+  url: process.env.DATABASE_URL,
   entities: [Feedback],
   synchronize: true,
-  
-  ssl: process.env.DATABASE_URL 
-    ? { rejectUnauthorized: false } 
-    : false, 
+  ssl: {
+    rejectUnauthorized: false, // هذا السطر هو مفتاح الحل للربط مع Railway
+  },
 }),
     TypeOrmModule.forFeature([Feedback]),
   ],
