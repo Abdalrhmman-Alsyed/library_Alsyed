@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl" class="scroll-smooth">
+<html lang="ar" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,104 +9,121 @@
 </head>
 <body class="bg-black text-blue-400 font-sans">
 
-  <nav class="bg-gray-900/90 fixed w-full z-50 backdrop-blur-md shadow-lg">
-    <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
-      <h1 class="text-2xl font-bold text-yellow-400">مكتبة السيد</h1>
-      
-      <ul class="flex space-x-4 space-x-reverse text-sm md:text-base overflow-x-auto pb-2 md:pb-0 w-full md:w-auto justify-center">
-        <li><a href="#home" class="hover:text-yellow-400 transition whitespace-nowrap">الرئيسية</a></li>
-        <li><a href="#services" class="hover:text-yellow-400 transition whitespace-nowrap">خدماتنا</a></li>
-        <li><a href="#feedback" class="hover:text-yellow-400 transition whitespace-nowrap">آراء العملاء</a></li>
-        <li><a href="#about" class="hover:text-yellow-400 transition whitespace-nowrap">عنّا</a></li>
-        <li><a href="#contact" class="hover:text-yellow-400 transition whitespace-nowrap">تواصل</a></li>
-      </ul>
-    </div>
-  </nav>
+  <!-- Navbar -->
+<nav class="flex justify-between items-center p-6 bg-gray-900/70 fixed w-full z-50 backdrop-blur-md">
 
-  <section id="home" class="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-20 animate-fadeIn">
-    <h2 class="text-4xl md:text-6xl font-extrabold mb-6 animate-bounce leading-tight">مرحبا بكم في <br class="md:hidden"> مكتبة السيد</h2>
-    <p class="text-lg md:text-2xl mb-8 max-w-2xl">نحن نقدم <br class="md:hidden"> 
-      <span class="text-yellow-400 font-semibold text-base md:text-2xl">🖊️ قرطاسية – 🖨️ طباعة – 🎲 ألعاب – 🎁 هدايا</span>
-    </p>
-    <a href="#services" class="bg-blue-500 hover:bg-blue-600 text-black font-bold py-3 px-8 rounded-lg transition-all shadow-lg hover:scale-105">اكتشف المزيد</a>
+  <!-- اسم المكتبة (يمين) -->
+  <h1 class="text-2xl font-bold">مكتبة السيد</h1>
+
+  <!-- الروابط (يسار) -->
+  <ul class="flex space-x-6">
+    <li><a href="#home" class="hover:text-yellow-400 transition">الرئيسية</a></li>
+    <li><a href="#services" class="hover:text-yellow-400 transition">خدماتنا</a></li>
+    <li><a href="#feedback" class="hover:text-yellow-400 transition">آراء العملاء</a></li>
+    <li><a href="#about" class="hover:text-yellow-400 transition">عنّا</a></li>
+    <li><a href="#contact" class="hover:text-yellow-400 transition">تواصل معنا</a></li>
+  </ul>
+
+</nav>
+  <!-- Hero Section -->
+  <section id="home" class="h-screen flex flex-col justify-center items-center text-center px-4 animate-fadeIn">
+    <h2 class="text-5xl md:text-6xl font-extrabold mb-6 animate-bounce">مرحبا بكم في مكتبة السيد</h2>
+    <p class="text-xl md:text-2xl mb-8 text-center">نحن نقدم <span class="text-yellow-400 font-semibold">🖊️ قرطاسية – 🖨️ طباعة – 🎲 ألعاب – 🎁 هدايا</span></p>
+    <a href="#services" class="bg-blue-500 hover:bg-blue-600 text-black font-bold py-3 px-6 rounded-lg transition-all shadow-lg hover:scale-105">اكتشف المزيد</a>
   </section>
 
-  <section id="services" class="py-20 px-6 max-w-6xl mx-auto text-center">
-    <h3 class="text-3xl md:text-4xl font-bold mb-12 border-b-2 border-yellow-400 inline-block pb-2">خدماتنا</h3>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-      <div class="bg-gray-900 p-8 rounded-xl shadow-lg border border-gray-800">
+  <!-- Services Section -->
+  <section id="services" class="py-24 px-6 max-w-6xl mx-auto text-center">
+    <h3 class="text-4xl font-bold mb-12">خدماتنا</h3>
+    <div class="grid md:grid-cols-4 gap-10">
+      <div class="bg-gray-900 p-6 rounded-xl shadow-lg hover:scale-105 transition-all">
         <i class="fas fa-pen-fancy text-4xl mb-4 text-yellow-400"></i>
         <h4 class="font-semibold text-xl mb-2">قرطاسية</h4>
-        <p class="text-sm">أفضل الأدوات المكتبية لجميع الأعمار.</p>
+        <p>أفضل الأدوات المكتبية لجميع الأعمار.</p>
       </div>
-      <div class="bg-gray-900 p-8 rounded-xl shadow-lg border border-gray-800">
+      <div class="bg-gray-900 p-6 rounded-xl shadow-lg hover:scale-105 transition-all">
         <i class="fas fa-print text-4xl mb-4 text-yellow-400"></i>
         <h4 class="font-semibold text-xl mb-2">طباعة</h4>
-        <p class="text-sm">خدمة الطباعة بجودة عالية وسريعة.</p>
+        <p>خدمة الطباعة بجودة عالية وسريعة.</p>
       </div>
-      <div class="bg-gray-900 p-8 rounded-xl shadow-lg border border-gray-800">
+      <div class="bg-gray-900 p-6 rounded-xl shadow-lg hover:scale-105 transition-all">
         <i class="fas fa-dice text-4xl mb-4 text-yellow-400"></i>
         <h4 class="font-semibold text-xl mb-2">ألعاب</h4>
-        <p class="text-sm">مجموعة متنوعة من الألعاب التعليمية والترفيهية.</p>
+        <p>مجموعة متنوعة من الألعاب التعليمية والترفيهية.</p>
       </div>
-      <div class="bg-gray-900 p-8 rounded-xl shadow-lg border border-gray-800">
+      <div class="bg-gray-900 p-6 rounded-xl shadow-lg hover:scale-105 transition-all">
         <i class="fas fa-gift text-4xl mb-4 text-yellow-400"></i>
         <h4 class="font-semibold text-xl mb-2">هدايا</h4>
-        <p class="text-sm">هدايا مميزة لجميع المناسبات.</p>
+        <p>هدايا مميزة لجميع المناسبات.</p>
       </div>
     </div>
   </section>
 
-  <section id="feedback" class="py-20 px-6 max-w-4xl mx-auto text-center">
-    <h3 class="text-3xl md:text-4xl font-bold mb-12">آراء العملاء</h3>
+  <!-- Feedback Section -->
+  <section id="feedback" class="py-24 px-6 max-w-6xl mx-auto text-center">
+    <h3 class="text-4xl font-bold mb-12">آراء العملاء</h3>
 
-    <form id="feedbackForm" class="bg-gray-900 p-6 md:p-8 rounded-xl shadow-lg space-y-4">
-      <div id="starRating" class="flex justify-center space-x-2 space-x-reverse mb-2">
+    <form id="feedbackForm" class="bg-gray-900 p-8 rounded-xl shadow-lg space-y-6 mx-auto max-w-2xl">
+      <div id="starRating" class="flex justify-center space-x-2 mb-2">
         <span data-value="1" class="text-4xl cursor-pointer text-gray-500 transition-colors">★</span>
         <span data-value="2" class="text-4xl cursor-pointer text-gray-500 transition-colors">★</span>
         <span data-value="3" class="text-4xl cursor-pointer text-gray-500 transition-colors">★</span>
         <span data-value="4" class="text-4xl cursor-pointer text-gray-500 transition-colors">★</span>
         <span data-value="5" class="text-4xl cursor-pointer text-gray-500 transition-colors">★</span>
       </div>
-      <p id="feedbackMessage" class="font-semibold"></p>
+      <p id="feedbackMessage" class="mt-2 font-semibold text-center"></p>
 
-      <input type="text" id="name" placeholder="اسمك (اختياري)" 
-             class="w-full p-4 rounded-lg bg-gray-800 text-blue-400 border border-gray-700 focus:ring-2 focus:ring-yellow-400 outline-none text-center">
-      
+       <label for="name" class="block mb-2 font-semibold text-blue-400">اسمك (اختياري)</label>
+      <input type="text" id="name" placeholder="أدخل اسمك (اختياري)" 
+             class="w-full p-4 rounded-lg bg-gray-800 text-blue-400 border-none focus:ring-2 focus:ring-yellow-400 outline-none text-center">
+  <label for="message" class="block mb-2 font-semibold text-blue-400" >اكتب رأيك هنا أو شكواك </label>
       <textarea id="message" placeholder="اكتب تقييمك هنا... أو شكواك" 
-                class="w-full p-4 rounded-lg bg-gray-800 text-blue-400 border border-gray-700 focus:ring-2 focus:ring-yellow-400 outline-none min-h-[120px] text-center"></textarea>
+                class="w-full p-6 rounded-lg bg-gray-800 text-blue-400 border-none focus:ring-2 focus:ring-yellow-400 outline-none min-h-[140px] text-center"></textarea>
 
-      <button type="submit" class="w-full py-4 bg-blue-500 hover:bg-blue-600 text-black font-bold rounded-lg text-lg shadow-xl">
+      <button type="submit" class="w-full py-4 bg-blue-500 hover:bg-blue-600 text-white font-bold rounded-lg text-lg transition-transform transform hover:scale-105">
         أرسل التقييم
       </button>
     </form>
 
-    <div id="feedbackList" class="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6"></div>
-    <button id="loadMoreBtn" class="mt-8 py-3 px-8 bg-yellow-400 hover:bg-yellow-500 text-black font-bold rounded-full transition shadow-lg">عرض المزيد</button>
+    <div id="feedbackList" class="mt-12 grid md:grid-cols-4 gap-6"></div>
+    <button id="loadMoreBtn" class="mt-6 py-2 px-6 bg-yellow-400 hover:bg-yellow-500 text-black font-bold rounded-lg transition">عرض المزيد</button>
   </section>
 
-  <section id="contact" class="py-20 px-6 max-w-5xl mx-auto text-center">
-    <h3 class="text-3xl font-bold mb-12">تواصل معنا</h3>
-    <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-      <a href="https://wa.me/0996393004" target="_blank" class="w-full sm:w-auto flex items-center justify-center space-x-2 space-x-reverse bg-green-500 hover:bg-green-600 text-white py-4 px-8 rounded-xl transition shadow-lg">
-        <i class="fab fa-whatsapp text-2xl"></i>
-        <span class="font-bold">واتس اب</span>
-      </a>
-      <a href="https://www.facebook.com/share/18Y9FyDAQT/" target="_blank" class="w-full sm:w-auto flex items-center justify-center space-x-2 space-x-reverse bg-blue-600 hover:bg-blue-700 text-white py-4 px-8 rounded-xl transition shadow-lg">
-        <i class="fab fa-facebook-f text-2xl"></i>
-        <span class="font-bold">فيسبوك</span>
-      </a>
-    </div>
+  <!-- About Section -->
+  <section id="about" class="py-24 px-6 max-w-5xl mx-auto text-center">
+    <h3 class="text-4xl font-bold mb-12">عنّا</h3>
+    <p class="text-lg md:text-xl leading-relaxed">
+      مكتبة السيد تهدف لتقديم أفضل المنتجات والخدمات في عالم القرطاسية، الطباعة، الألعاب والهدايا.
+      نحن نسعى لإرضاء كل عميل بتجربة مميزة وسهلة.
+    </p>
   </section>
 
-  <footer class="bg-gray-900 p-8 text-center text-sm">
+  <!-- Contact Section -->
+  <section id="contact" class="py-24 px-6 max-w-5xl mx-auto text-center">
+  <h3 class="text-4xl font-bold mb-12">تواصل معنا</h3>
+
+  <div class="flex justify-center items-center space-x-6 text-lg md:text-xl">
+    <!-- واتس اب -->
+    <a href="https://wa.me/0996393004" target="_blank" class="flex items-center space-x-2 bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-lg transition">
+      <i class="fab fa-whatsapp text-2xl"></i>
+      <span>واتس اب</span>
+    </a>
+
+    <!-- فيسبوك -->
+    <a href="https://www.facebook.com/share/18Y9FyDAQT/" target="_blank" class="flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg transition">
+      <i class="fab fa-facebook-f text-2xl"></i>
+      <span>فيسبوك</span>
+    </a>
+  </div>
+</section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 p-6 text-center mt-12">
     <p>&copy; 2026 مكتبة السيد. كل الحقوق محفوظة.</p>
   </footer>
 
+  <!-- JS -->
   <script>
-    // هام جداً: استبدل هذا الرابط برابط Railway الخاص بك
-// ابحث عن هذا السطر في ملف index.html وغيره
-const API_URL = 'https://libraryalsyed-production.up.railway.app/';
     const feedbackForm = document.getElementById('feedbackForm');
     const starContainer = document.getElementById('starRating');
     const feedbackMessage = document.getElementById('feedbackMessage');
@@ -117,6 +134,7 @@ const API_URL = 'https://libraryalsyed-production.up.railway.app/';
     let offset = 0;
     const limit = 4;
 
+    // النجوم
     starContainer.querySelectorAll('span').forEach(star => {
       star.addEventListener('click', () => {
         selectedRating = parseInt(star.dataset.value);
@@ -126,11 +144,16 @@ const API_URL = 'https://libraryalsyed-production.up.railway.app/';
 
     function updateStars() {
       starContainer.querySelectorAll('span').forEach(star => {
-        star.classList.toggle('text-yellow-400', parseInt(star.dataset.value) <= selectedRating);
-        star.classList.toggle('text-gray-500', parseInt(star.dataset.value) > selectedRating);
+        star.classList.remove('text-yellow-400');
+        star.classList.add('text-gray-500');
+        if (parseInt(star.dataset.value) <= selectedRating) {
+          star.classList.add('text-yellow-400');
+          star.classList.remove('text-gray-500');
+        }
       });
     }
 
+    // إرسال التقييم
     feedbackForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       const message = document.getElementById('message').value.trim();
@@ -138,50 +161,52 @@ const API_URL = 'https://libraryalsyed-production.up.railway.app/';
 
       if (!selectedRating || !message) {
         feedbackMessage.textContent = "الرجاء كتابة رسالة واختيار تقييم!";
-        feedbackMessage.className = "text-red-500";
+        feedbackMessage.style.color = "red";
         return;
       }
 
       try {
-        const res = await fetch(API_URL, {
+        const res = await fetch('http://localhost:3000/feedback', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ rating: selectedRating, message, name })
         });
+
+        if (!res.ok) throw new Error('فشل الإرسال');
         const data = await res.json();
         feedbackMessage.textContent = "تم إرسال التقييم بنجاح!";
-        feedbackMessage.className = "text-green-500";
+        feedbackMessage.style.color = "green";
+
         addFeedbackCard(data, true);
         feedbackForm.reset();
         selectedRating = 0;
         updateStars();
       } catch (err) {
         feedbackMessage.textContent = "حدث خطأ أثناء الإرسال.";
-        feedbackMessage.className = "text-red-500";
+        feedbackMessage.style.color = "red";
       }
     });
 
+    // إضافة بطاقة تقييم
     function addFeedbackCard(feedback, prepend = false) {
       const card = document.createElement('div');
-      card.className = 'bg-gray-800 p-6 rounded-xl shadow-md border border-gray-700 text-center animate-fadeIn';
+      card.className = 'card bg-gray-900 p-6 rounded-xl shadow-lg text-center';
       card.innerHTML = `
-        <p class="text-yellow-400 text-xl mb-2">${'★'.repeat(feedback.rating)}${'☆'.repeat(5 - feedback.rating)}</p>
-        <p class="text-white mb-4 italic">"${feedback.message}"</p>
-        <div class="text-xs text-blue-300 font-bold uppercase tracking-wider">
-          ${feedback.name} <span class="text-gray-500 mx-2">|</span> ${new Date(feedback.createdAt).toLocaleDateString('ar-EG')}
-        </div>
+        <p class="text-yellow-400 text-2xl mb-2">${'★'.repeat(feedback.rating)}${'☆'.repeat(5 - feedback.rating)}</p>
+        <p class="mb-2">${feedback.message}</p>
+        <small>${feedback.name || 'غير معروف'} - ${new Date(feedback.createdAt).toLocaleDateString()}</small>
       `;
-      prepend ? feedbackList.prepend(card) : feedbackList.append(card);
+      if (prepend) feedbackList.prepend(card);
+      else feedbackList.append(card);
     }
 
+    // جلب التقييمات
     async function loadFeedbacks() {
-      try {
-        const res = await fetch(`${API_URL}?limit=${limit}&offset=${offset}`);
-        const data = await res.json();
-        data.forEach(f => addFeedbackCard(f));
-        offset += data.length;
-        if (data.length < limit) loadMoreBtn.style.display = 'none';
-      } catch (e) { console.log("خطأ في الجلب"); }
+      const res = await fetch(`http://localhost:3000/feedback?limit=${limit}&offset=${offset}`);
+      const data = await res.json();
+      data.forEach(f => addFeedbackCard(f));
+      offset += data.length;
+      if (data.length < limit) loadMoreBtn.style.display = 'none';
     }
 
     loadMoreBtn.addEventListener('click', loadFeedbacks);
@@ -189,11 +214,10 @@ const API_URL = 'https://libraryalsyed-production.up.railway.app/';
   </script>
 
   <style>
-    @keyframes fadeIn { from {opacity: 0; transform: translateY(10px);} to {opacity: 1; transform: translateY(0);} }
-    .animate-fadeIn { animation: fadeIn 0.8s ease-out forwards; }
-    @keyframes bounce { 0%, 100% { transform: translateY(0);} 50% { transform: translateY(-10px);} }
-    .animate-bounce { animation: bounce 3s infinite; }
-    body { overflow-x: hidden; }
+    @keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
+    .animate-fadeIn { animation: fadeIn 1.5s ease-in-out; }
+    @keyframes bounce { 0%, 100% { transform: translateY(0);} 50% { transform: translateY(-15px);} }
+    .animate-bounce { animation: bounce 2s infinite; }
   </style>
 </body>
 </html>
