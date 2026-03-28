@@ -6,16 +6,17 @@ import { FeedbackService } from './feedback/feedback.service';
 
 @Module({
   imports: [
-    TypeOrmModule.forRoot({
-      type: 'postgres',
-      // هنا التعديل الجوهري: نستخدم الرابط من المتغيرات البيئية
-      url: process.env.DATABASE_URL, 
-      entities: [Feedback],
-      synchronize: true, // سيقوم بإنشاء الجداول تلقائياً في قاعدة بيانات Railway
-      ssl: {
-        rejectUnauthorized: false, // ضروري جداً للاتصال بقواعد البيانات السحابية
-      },
-    }),
+TypeOrmModule.forRoot({
+  type: 'postgres',
+ 
+  url: process.env.DATABASE_URL || 'postgresql://postgres:5472@localhost:5432/feedback_db', 
+  entities: [Feedback],
+  synchronize: true,
+  
+  ssl: process.env.DATABASE_URL 
+    ? { rejectUnauthorized: false } 
+    : false, 
+}),
     TypeOrmModule.forFeature([Feedback]),
   ],
   controllers: [FeedbackController],
