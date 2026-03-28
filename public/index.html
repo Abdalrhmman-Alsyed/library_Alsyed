@@ -164,7 +164,7 @@
       }
 
       try {
-        const res = await fetch('http://localhost:3000/feedback', {
+        const res = await fetch('https://localhost:3000/feedback', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ rating: selectedRating, message, name })
@@ -200,7 +200,7 @@
 
     // جلب التقييمات
     async function loadFeedbacks() {
-      const res = await fetch(`http://localhost:3000/feedback?limit=${limit}&offset=${offset}`);
+      const res = await fetch(`https://localhost:3000/feedback?limit=${limit}&offset=${offset}`);
       const data = await res.json();
       data.forEach(f => addFeedbackCard(f));
       offset += data.length;
