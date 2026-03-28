@@ -1,0 +1,87 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #121212; 
+  margin: 0;
+  padding: 0;
+  direction: rtl;
+  color: #0d47a1; 
+}
+
+.container {
+  max-width: 700px;
+  margin: 50px auto;
+  background: #1e1e1e; 
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.7);
+}
+
+h1 {
+  text-align: center;
+  color: #0d47a1;
+  font-size: 2em;
+}
+
+label {
+  display: block;
+  margin-top: 20px;
+  font-weight: bold;
+  color: #0d47a1;
+}
+
+textarea {
+  width: 100%;
+  padding: 15px;
+  margin-top: 8px;
+  border-radius: 10px;
+  border: none;
+  background: #2a2a2a;
+  color: #0d47a1;
+  resize: none;
+  min-height: 100px;
+  font-size: 16px;
+}
+
+button {
+  margin-top: 20px;
+  background-color: #0d47a1;
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #1565c0;
+}
+.stars span {
+  font-size: 28px;
+  cursor: pointer;
+  color: #444;
+  margin-right: 8px;
+  transition: transform 0.3s, color 0.3s;
+}
+.stars span.selected {
+  color: #FFD700; 
+}
+
+
+#feedbackList .card {
+  background: #222; 
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.5);
+  transition: 0.3s;
+}
+
+#feedbackList .card:hover {
+  background: #1b1b1b;
+}
+#feedbackList {
+  max-height: 600px;
+  overflow-y: auto;
+}
