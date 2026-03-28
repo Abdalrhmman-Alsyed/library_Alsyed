@@ -15,8 +15,8 @@ async function bootstrap() {
   );
 
   
-  app.useStaticAssets(join(__dirname, '..', 'public'));
 
+app.useStaticAssets(join(process.cwd(), 'public'));
 app.enableCors();
 const port = process.env.PORT || 3000;
 app.listen(port, "0.0.0.0", () => {
