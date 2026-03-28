@@ -22,7 +22,7 @@ async function bootstrap() {
   app.useStaticAssets(join(process.cwd(), 'public'));
 
   // 4. إعداد المنفذ (Port) - لاحظ التعديل هنا
-  const port = process.env.PORT || 5000;
+  const port = process.env.PORT || 3000;
   
   // استخدم await مباشرة بدون callback لضمان الاستقرار في Railway
   await app.listen(port, "0.0.0.0");
