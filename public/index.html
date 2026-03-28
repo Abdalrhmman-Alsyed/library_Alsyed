@@ -203,18 +203,20 @@ const res = await fetch('https://libraryalsyed-production.up.railway.app/feedbac
    // جلب التقييمات - تأكد أن الرابط هو رابط Railway وليس localhost
 async function loadFeedbacks() {
   try {
-    // التغيير هنا: استبدل localhost برابط موقعك على Railway
     const res = await fetch(`https://libraryalsyed-production.up.railway.app/feedback?limit=${limit}&offset=${offset}`);
-    
     if (!res.ok) throw new Error('فشل جلب البيانات');
-    
     const data = await res.json();
-    data.forEach(f => addFeedbackCard(f));
-    offset += data.length;
     
-    if (data.length < limit) loadMoreBtn.style.display = 'none';
+    if (data.length > 0) {
+        data.forEach(f => addFeedbackCard(f));
+        offset += data.length;
+    }
+    
+    // هذا السطر سيحل مشكلة الزر
+    loadMoreBtn.style.display = (data.length < limit) ? 'none' : 'block';
+    
   } catch (err) {
-    console.error("خطأ في جلب التقييمات:", err);
+    console.error("خطأ:", err);
   }
 }
 

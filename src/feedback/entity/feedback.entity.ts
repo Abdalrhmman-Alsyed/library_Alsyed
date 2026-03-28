@@ -4,7 +4,7 @@ import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn } from 'typeor
 export class Feedback {
   @PrimaryGeneratedColumn()
   id: number;
-w   
+ 
   @Column()
   rating: number;
 
