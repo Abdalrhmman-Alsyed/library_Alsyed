@@ -102,7 +102,7 @@
 
   <div class="flex justify-center items-center space-x-6 text-lg md:text-xl">
     <!-- واتس اب -->
-    <a href="https://wa.me/0996393004" target="_blank" class="flex items-center space-x-2 bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-lg transition">
+   <a href="https://wa.me/963996393004" target="_blank" class="flex items-center space-x-2 bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-lg transition">
       <i class="fab fa-whatsapp text-2xl"></i>
       <span>واتس اب</span>
     </a>
@@ -200,14 +200,25 @@ const res = await fetch('https://libraryalsyed-production.up.railway.app/feedbac
       else feedbackList.append(card);
     }
 
-    // جلب التقييمات
-    async function loadFeedbacks() {
-const res = await fetch(`https://libraryalsyed-production.up.railway.app/feedback?limit=${limit}&offset=${offset}`);
-      const data = await res.json();
-      data.forEach(f => addFeedbackCard(f));
-      offset += data.length;
-      if (data.length < limit) loadMoreBtn.style.display = 'none';
-    }
+   // جلب التقييمات - تأكد أن الرابط هو رابط Railway وليس localhost
+async function loadFeedbacks() {
+  try {
+    // التغيير هنا: استبدل localhost برابط موقعك على Railway
+    const res = await fetch(`https://libraryalsyed-production.up.railway.app/feedback?limit=${limit}&offset=${offset}`);
+    
+    if (!res.ok) throw new Error('فشل جلب البيانات');
+    
+    const data = await res.json();
+    data.forEach(f => addFeedbackCard(f));
+    offset += data.length;
+    
+    if (data.length < limit) loadMoreBtn.style.display = 'none';
+  } catch (err) {
+    console.error("خطأ في جلب التقييمات:", err);
+  }
+}
+
+// استدعاء الدالة عند تحميل الصفحة
 
     loadMoreBtn.addEventListener('click', loadFeedbacks);
     loadFeedbacks();
