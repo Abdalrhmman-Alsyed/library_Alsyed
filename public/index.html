@@ -10,18 +10,16 @@
 <body class="bg-black text-blue-400 font-sans">
 
   <!-- Navbar -->
-<nav class="flex justify-between items-center p-6 bg-gray-900/70 fixed w-full z-50 backdrop-blur-md">
+<nav class="flex justify-between items-center p-6 bg-gray-900/70 fixed w-full z-50 backdrop-blur-md flex-row-reverse">
 
-  <!-- اسم المكتبة (يمين) -->
   <h1 class="text-2xl font-bold">مكتبة السيد</h1>
 
-  <!-- الروابط (يسار) -->
-  <ul class="flex space-x-6">
-    <li><a href="#home" class="hover:text-yellow-400 transition">الرئيسية</a></li>
-    <li><a href="#services" class="hover:text-yellow-400 transition">خدماتنا</a></li>
-    <li><a href="#feedback" class="hover:text-yellow-400 transition">آراء العملاء</a></li>
-    <li><a href="#about" class="hover:text-yellow-400 transition">عنّا</a></li>
+  <ul class="flex space-x-6 space-x-reverse">
     <li><a href="#contact" class="hover:text-yellow-400 transition">تواصل معنا</a></li>
+    <li><a href="#about" class="hover:text-yellow-400 transition">عنّا</a></li>
+    <li><a href="#feedback" class="hover:text-yellow-400 transition">آراء العملاء</a></li>
+    <li><a href="#services" class="hover:text-yellow-400 transition">خدماتنا</a></li>
+    <li><a href="#home" class="hover:text-yellow-400 transition">الرئيسية</a></li>
   </ul>
 
 </nav>
@@ -166,7 +164,7 @@
       }
 
       try {
-        const res = await fetch('http://localhost:3000/feedback', {
+        const res = await fetch('https://libraryalsyed-production.up.railway.app/feedback', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ rating: selectedRating, message, name })
@@ -202,7 +200,7 @@
 
     // جلب التقييمات
     async function loadFeedbacks() {
-      const res = await fetch(`http://localhost:3000/feedback?limit=${limit}&offset=${offset}`);
+      const res = await fetch(`https://libraryalsyed-production.up.railway.app/feedback?limit=${limit}&offset=${offset}`);
       const data = await res.json();
       data.forEach(f => addFeedbackCard(f));
       offset += data.length;
