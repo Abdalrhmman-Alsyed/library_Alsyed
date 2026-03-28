@@ -165,7 +165,7 @@
 
       try {
      
-const res = await fetch('http://libraryalsyed-production.up.railway.app/feedback', {
+const res = await fetch('https://libraryalsyed-production.up.railway.app/feedback', {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify({ rating: selectedRating, message, name })
@@ -204,7 +204,7 @@ const res = await fetch('http://libraryalsyed-production.up.railway.app/feedback
 async function loadFeedbacks() {
   try {
     // التغيير هنا: استبدل localhost برابط موقعك على Railway
-    const res = await fetch(`http://libraryalsyed-production.up.railway.app/feedback?limit=${limit}&offset=${offset}`);
+    const res = await fetch(`https://libraryalsyed-production.up.railway.app/feedback?limit=${limit}&offset=${offset}`);
     
     if (!res.ok) throw new Error('فشل جلب البيانات');
     

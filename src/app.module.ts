@@ -9,7 +9,7 @@ import { FeedbackService } from './feedback/feedback.service';
 TypeOrmModule.forRoot({
   type: 'postgres',
  
-  url: process.env.DATABASE_URL || 'postgresql://postgres:5472@localhost:5432/feedback_db', 
+  url: "postgresql://postgres:stJQYlZjqyXfTcEIGBRHmvEuVTkPpuKR@postgres.railway.internal:5432/railway",
   entities: [Feedback],
   synchronize: true,
   
