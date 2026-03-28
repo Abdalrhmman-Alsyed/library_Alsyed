@@ -4,18 +4,17 @@ import { Feedback } from './feedback/entity/feedback.entity';
 import { FeedbackController } from './feedback/feedback.controller';
 import { FeedbackService } from './feedback/feedback.service';
 
-
 @Module({
   imports: [
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'localhost',
-      port: 5432,
-      username: 'postgres',
-      password: '5472',
-      database: 'feedback_db',
+      // هنا التعديل الجوهري: نستخدم الرابط من المتغيرات البيئية
+      url: process.env.DATABASE_URL, 
       entities: [Feedback],
-      synchronize: true, 
+      synchronize: true, // سيقوم بإنشاء الجداول تلقائياً في قاعدة بيانات Railway
+      ssl: {
+        rejectUnauthorized: false, // ضروري جداً للاتصال بقواعد البيانات السحابية
+      },
     }),
     TypeOrmModule.forFeature([Feedback]),
   ],
