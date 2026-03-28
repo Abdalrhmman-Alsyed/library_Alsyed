@@ -200,18 +200,29 @@ const res = await fetch('https://libraryalsyed-production.up.railway.app/feedbac
       else feedbackList.append(card);
     }
 
-   // جلب التقييمات - تأكد أن الرابط هو رابط Railway وليس localhost
 async function loadFeedbacks() {
   try {
-    const res = await fetch(`https://libraryalsyed-production.up.railway.app/feedback?limit=${limit}&offset=${offset}`);
-    if (!res.ok) throw new Error('فشل جلب البيانات');
-    const data = await res.json();
+    // تأكد أن هذا الرابط هو رابط موقعك على Railway وليس localhost
+    const response = await fetch(`https://libraryalsyed-production.up.railway.app/feedback?limit=${limit}&offset=${offset}`);
     
+    const data = await response.json();
+    console.log("البيانات القادمة من السيرفر:", data); // افتح F12 لتراها
+
     if (data.length > 0) {
-        data.forEach(f => addFeedbackCard(f));
-        offset += data.length;
+      data.forEach(f => addFeedbackCard(f));
+      offset += data.length;
     }
-    
+
+    // إخفاء الزر إذا لم تكن هناك بيانات أكثر
+    if (data.length < limit) {
+      loadMoreBtn.style.display = 'none';
+    } else {
+      loadMoreBtn.style.display = 'block';
+    }
+  } catch (err) {
+    console.error("خطأ في جلب البيانات:", err);
+  }
+}
     // هذا السطر سيحل مشكلة الزر
     loadMoreBtn.style.display = (data.length < limit) ? 'none' : 'block';
     
